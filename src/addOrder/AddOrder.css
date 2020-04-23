@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  display: block;
+  padding: 0;
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Courier New';
+}
+
+.addOrder {
+  max-width: 200px;
+  margin: auto;
+}
+
+h1 {
+  margin-left: 15px;
+}
+
+label[for='phone'] {
+  margin: 15px;
+}
+
+label[for='Name'] {
+  margin: 15px;
+}
+
+label[for='Street'] {
+  margin: 15px;
+}
+
+label[for='PostCod'] {
+  margin: 15px;
+}
+
+label[for='Date'] {
+  margin-left: 15px;
+}
+
+label[for='bottle'] {
+  margin: 15px;
+}
+
+label[for='Obs'] {
+  margin: 10px;
+}
+
+#phone {
+  margin: 10px;
+}
+
+#Name {
+  margin: 10px;
+}
+
+#Street {
+  margin: 10px;
+}
+
+#PostCod {
+  margin: 10px;
+}
+
+#Date {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  margin: 10px;
+}
+
+button {
+  margin-left: 10px;
+}
