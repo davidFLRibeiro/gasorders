@@ -21,6 +21,9 @@ export class NavBar extends Component {
           <li>
             <NavLink to='/OrderHistoric'>Order Historic</NavLink>
           </li>
+          <li>
+            <NavLink to='/Delivers'>Delivers</NavLink>
+          </li>
         </ul>
       </nav>
     );

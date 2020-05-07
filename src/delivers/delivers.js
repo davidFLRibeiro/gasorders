@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import orderContext from '../context/orderContext';
-import './Historic.css';
 import { Redirect } from 'react-router-dom';
 
-export class Historic extends Component {
+export class delivers extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,22 +23,26 @@ export class Historic extends Component {
     }
     return (
       <section className='order_list'>
-        <h1>HISTORIC</h1>
+        <h1>Delivers</h1>
         <ul>
-          {orders.map((order) => (
-            <li
-              key={order.id}
-              id={order.id}
-              onClick={this.handleEditOrder.bind(this)}
-            >
-              {' '}
-              {order.client_name} {'  '} {order.date_deliver}
-            </li>
-          ))}
+          {orders
+            .filter((order) => {
+              return order.delivered === false;
+            })
+            .map((order) => (
+              <li
+                key={order.id}
+                id={order.id}
+                onClick={this.handleEditOrder.bind(this)}
+              >
+                {' '}
+                {order.client_name} {'  '} {order.date_deliver}
+              </li>
+            ))}
         </ul>
       </section>
     );
   }
 }
 
-export default Historic;
+export default delivers;
