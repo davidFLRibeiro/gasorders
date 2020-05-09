@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar/NavBar';
 import LandingPage from './LandingPage/LandingPage';
-import { Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import AddOrder from './addOrder/AddOrder';
 import ClientList from './ClientList/ClientList';
 import Historic from './Historic/Historic';
@@ -16,11 +16,27 @@ export class App extends Component {
     super(props);
     this.state = {
       orders: [],
+      clients: [],
     };
   }
 
-  componentDidMount() {
-    fetch(`${config.API_ENDPOINT}clients`)
+  async componentDidMount() {
+    try {
+      let [orders, clients] = await Promise.all([
+        fetch(`${config.API_ENDPOINT}clients`).then((response) =>
+          response.json()
+        ),
+        fetch(`${config.API_ENDPOINT}clients/clientid`).then((response) =>
+          response.json()
+        ),
+      ]);
+
+      this.setState({ orders, clients });
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+  /* fetch(`${config.API_ENDPOINT}clients`)
       .then((ordersRes) => {
         if (!ordersRes.ok)
           return ordersRes.json().then((e) => Promise.reject(e));
@@ -32,7 +48,7 @@ export class App extends Component {
       .catch((error) => {
         console.error({ error });
       });
-  }
+  }*/
 
   ordersUpdate = (data) => {
     this.setState((orders) => {
@@ -59,6 +75,7 @@ export class App extends Component {
       orders: this.state.orders,
       ordersUpdate: this.ordersUpdate,
       ordersEdit: this.ordersEdit,
+      clients: this.state.clients,
     };
 
     return (

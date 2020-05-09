@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import { Link, redirect, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 export class NavBar extends Component {
   render() {
     return (
       <nav className='menu'>
-        {/*<label htmlFor='menu-toggle'>Menu</label>*/}
-        {/*<input type='checkbox' id='menu-toggle' />*/}
+        <label htmlFor='menu-toggle'>Menu</label>
+        <input type='checkbox' id='menu-toggle' />
         <ul id='menu'>
           <li>
-            <NavLink to='/'>Home</NavLink>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <NavLink to='/AddOrder'>Add Order</NavLink>
+            <Link to='/AddOrder'>AddOrder</Link>
           </li>
           <li>
-            <NavLink to='/ClientList'>Client List</NavLink>
+            <Link to='ClientList'>Client List</Link>
           </li>
           <li>
-            <NavLink to='/OrderHistoric'>Order Historic</NavLink>
+            <Link to='/OrderHistoric'>Historic</Link>
           </li>
           <li>
-            <NavLink to='/Delivers'>Delivers</NavLink>
+            <Link to='/Delivers'>To be Delivered...</Link>
           </li>
         </ul>
       </nav>

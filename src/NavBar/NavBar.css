@@ -2,8 +2,327 @@
   box-sizing: border-box;
 }
 
+a {
+  font-family: 'Courier New';
+  color: white;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .menu {
   padding-top: 0px !important;
-  /*margin-top: 0px !important;*/
-  background-color: grey;
+  margin-top: 0 !important;
+  border-bottom: 1px solid whitesmoke;
+  background-color: black;
+}
+
+.menu label[for='menu-toggle'] {
+  /* margin-top: 100px !important;*/
+
+  cursor: pointer;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Courier New';
+  text-align: left;
+  padding-top: 10px;
+
+  width: 50px !important;
+  margin-left: 18px;
+}
+#content {
+  background-color: black;
+}
+
+.menu li {
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 7px;
+  width: 96%;
+  text-decoration: none !important;
+}
+
+label,
+#content {
+  margin-top: 0 !important;
+  text-decoration: none !important;
+  text-align: right;
+  height: 30px;
+  width: 95%;
+  display: inline-block;
+}
+#menu-toggle {
+  display: none;
+}
+#menu {
+  background-color: black;
+  text-decoration: none !important;
+  text-align: left;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  margin: 0 auto;
+
+  -webkit-transition: all 0.3s ease;
+}
+
+#menu a {
+  font-weight: bold;
+  text-decoration: none !important;
+  color: white;
+  margin-right: 30px;
+}
+
+#menu-toggle:checked + #menu {
+  max-height: 200px;
+}
+
+@media screen and (min-width: 480px) {
+  a {
+    font-family: 'Courier New';
+    color: white;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .menu {
+    padding-top: 0px !important;
+    margin-top: 0 !important;
+    border-bottom: 1px solid whitesmoke;
+    background-color: black;
+  }
+
+  .menu label[for='menu-toggle'] {
+    /* margin-top: 100px !important;*/
+
+    cursor: pointer;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Courier New';
+    text-align: left;
+    padding-top: 10px;
+
+    width: 50px !important;
+    margin-left: 18px;
+  }
+  #content {
+    background-color: black;
+  }
+
+  .menu li {
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 96%;
+    text-decoration: none !important;
+  }
+
+  label,
+  #content {
+    margin-top: 0 !important;
+    text-decoration: none !important;
+    text-align: right;
+    height: 30px;
+    width: 95%;
+    display: inline-block;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu {
+    background-color: black;
+    text-decoration: none !important;
+    text-align: left;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+
+    -webkit-transition: all 0.3s ease;
+  }
+
+  #menu a {
+    font-weight: bold;
+    text-decoration: none !important;
+    color: white;
+    margin-right: 30px;
+  }
+
+  #menu-toggle:checked + #menu {
+    max-height: 200px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  a {
+    font-family: 'Courier New';
+    color: white;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .menu {
+    padding-top: 0px !important;
+    margin-top: 0 !important;
+    border-bottom: 1px solid whitesmoke;
+    background-color: black;
+  }
+
+  .menu label[for='menu-toggle'] {
+    /* margin-top: 100px !important;*/
+
+    cursor: pointer;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Courier New';
+    text-align: left;
+    padding-top: 10px;
+
+    width: 50px !important;
+    margin-left: 18px;
+  }
+  #content {
+    background-color: black;
+  }
+
+  .menu li {
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 96%;
+    text-decoration: none !important;
+  }
+
+  label,
+  #content {
+    margin-top: 0 !important;
+    text-decoration: none !important;
+    text-align: right;
+    height: 30px;
+    width: 95%;
+    display: inline-block;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu {
+    background-color: black;
+    text-decoration: none !important;
+    text-align: left;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+
+    -webkit-transition: all 0.3s ease;
+  }
+
+  #menu a {
+    font-weight: bold;
+    text-decoration: none !important;
+    color: white;
+    margin-right: 30px;
+  }
+
+  #menu-toggle:checked + #menu {
+    max-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  a {
+    font-family: 'Courier New';
+    color: white;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .menu {
+    padding-top: 0px !important;
+    margin-top: 0 !important;
+    border-bottom: 1px solid whitesmoke;
+    background-color: black;
+  }
+
+  .menu label[for='menu-toggle'] {
+    /* margin-top: 100px !important;*/
+
+    cursor: pointer;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Courier New';
+    text-align: left;
+    padding-top: 10px;
+    width: 50px !important;
+    margin-left: 18px;
+  }
+  #content {
+    background-color: black;
+  }
+
+  .menu li {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 96%;
+    text-decoration: none !important;
+  }
+
+  label,
+  #content {
+    margin-top: 0 !important;
+    text-decoration: none !important;
+    text-align: right;
+    height: 30px;
+    width: 95%;
+    display: inline-block;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu {
+    background-color: black;
+    text-decoration: none !important;
+    text-align: left;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+
+    -webkit-transition: all 0.3s ease;
+  }
+
+  #menu a {
+    font-weight: bold;
+    text-decoration: none !important;
+    color: white;
+    margin-right: 30px;
+  }
+
+  #menu-toggle:checked + #menu {
+    max-height: 200px;
+  }
 }

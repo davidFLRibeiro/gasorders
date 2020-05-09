@@ -16,43 +16,62 @@ h1 {
 label[for='phone'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 label[for='Name'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
+}
+
+label[for='delivered'] {
+  width: 180px;
+  text-align: left;
+  color: black;
+  font-size: 20px;
 }
 
 label[for='Street'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 label[for='PostCod'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 label[for='Date'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 label[for='bottle'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 label[for='Obs'] {
   text-align: left;
   color: black;
-  font-size: 23px;
+  font-size: 20px;
+}
+
+label[for='delivered'] {
+  width: 110px;
+  text-align: left;
+  color: black;
+  font-size: 20px;
+}
+
+#check {
+  width: 25px;
+  height: 25px;
 }
 
 #phone {
@@ -63,13 +82,13 @@ label[for='Obs'] {
 #Name {
   border: 2px solid black;
   margin: 10px;
-  width: 90%;
+  max-width: 90%;
 }
 
 #Street {
   border: 2px solid black;
   margin: 10px;
-  width: 90%;
+  max-width: 90%;
 }
 
 #PostCod {
@@ -83,7 +102,7 @@ label[for='Obs'] {
   margin-bottom: 10px;
 }
 
-#bottle {
+#Bottle {
   border: 2px solid black;
   margin-left: 5px;
   margin-bottom: 10px;
@@ -104,10 +123,11 @@ button {
   background-color: black;
   color: white;
   font-weight: bold;
+  margin-top: 15px;
 }
 
 @media screen and (min-width: 480px) {
-  .orderAdd {
+  .editOrder {
     margin-left: 15px;
   }
 
@@ -122,6 +142,13 @@ button {
 
   label[for='phone'] {
     display: inline-block;
+    text-align: left;
+    color: black;
+    font-size: 24px;
+  }
+
+  label[for='delivered'] {
+    width: 180px;
     text-align: left;
     color: black;
     font-size: 24px;
@@ -173,6 +200,18 @@ button {
     margin: 10px;
   }
 
+  label[for='delivered'] {
+    width: 120px;
+    text-align: left;
+    color: black;
+    font-size: 23px;
+  }
+
+  #check {
+    width: 25px;
+    height: 25px;
+  }
+
   #Name {
     border: 2px solid black;
     margin: 10px;
@@ -196,7 +235,7 @@ button {
     margin-bottom: 10px;
   }
 
-  #bottle {
+  #Bottle {
     border: 2px solid black;
     margin-left: 5px;
     margin-bottom: 10px;
@@ -211,15 +250,16 @@ button {
   button {
     border: 2px solid black;
     margin-left: 10px;
+    margin-top: 15px;
   }
 }
 @media screen and (min-width: 800px) {
-  .orderAdd {
+  .orderEdit {
     width: 490px;
     margin: auto !important;
   }
 
-  .addOrder h1 {
+  .editOrder h1 {
     margin-top: 70px !important;
     width: 100%;
     text-align: center;
@@ -243,6 +283,12 @@ button {
     color: black;
     font-size: 23px;
   }
+  label[for='delivered'] {
+    width: 180px;
+    text-align: left;
+    color: black;
+    font-size: 23px;
+  }
 
   label[for='Street'] {
     text-align: left;
@@ -278,6 +324,18 @@ button {
     font-size: 23px;
   }
 
+  label[for='delivered'] {
+    width: 130px;
+    text-align: left;
+    color: black;
+    font-size: 23px;
+  }
+
+  #check {
+    width: 25px;
+    height: 25px;
+  }
+
   #phone {
     border: 2px solid black;
     margin: 10px;
@@ -306,7 +364,7 @@ button {
     margin-bottom: 10px;
   }
 
-  #bottle {
+  #Bottle {
     border: 2px solid black;
     margin-left: 5px;
     margin-bottom: 10px;
@@ -323,20 +381,20 @@ button {
     margin-left: 10px;
     height: 25px;
     width: 70px;
+    margin-top: 15px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  .orderAdd {
-    width: 30%;
-    border: 2px solid red;
+  .orderEdit {
+    width: 490px;
     margin: auto !important;
   }
 
-  .addOrder h1 {
+  .editOrder h1 {
     margin-top: 70px !important;
     width: 100%;
-    margin-left: 35%;
+    text-align: center;
     font-size: 60px;
   }
 
@@ -392,6 +450,19 @@ button {
     font-size: 28px;
   }
 
+  label[for='delivered'] {
+    width: 150px;
+    text-align: left;
+    color: black;
+    font-size: 28px;
+  }
+
+  #check {
+    width: 25px;
+    height: 25px;
+    margin-top: 15px;
+  }
+
   #phone {
     border: 2px solid black;
     margin: 10px;
@@ -425,7 +496,7 @@ button {
     height: 30px;
   }
 
-  #bottle {
+  #Bottle {
     border: 2px solid black;
     margin-left: 5px;
     margin-bottom: 10px;
@@ -441,7 +512,9 @@ button {
   button {
     border: 2px solid black;
     margin-left: 10px;
+    margin-top: 15px;
     height: 30px;
     width: 75px;
+    margin-top: 15px;
   }
 }

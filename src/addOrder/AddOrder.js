@@ -16,6 +16,7 @@ export class AddOrder extends Component {
       observations: '',
       delivered: '',
       orders: [],
+      errorMsg: '',
     };
     this.handleAddOrder = this.handleAddOrder.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -60,15 +61,18 @@ export class AddOrder extends Component {
       })
       .catch((error) => {
         console.log(error);
+        this.setState({ errorMsg: 'phone number to long' });
       });
   };
 
   render() {
     console.log(this.context);
+
     return (
       <div className='addOrder'>
-        <h1>Add Order</h1>
-        <form className='order'>
+        <h1>Add Order </h1>
+        {this.state.errorMsg && <p>phone number to long</p>}
+        <form className='orderAdd'>
           <label htmlFor='phone'>Phone</label>
           <input
             type='text'
@@ -88,6 +92,7 @@ export class AddOrder extends Component {
             onChange={this.handleChange}
             value={this.state.client_name}
           ></input>
+          <br />
           <label htmlFor='Street'>Street</label>
           <input
             type='text'
@@ -98,7 +103,7 @@ export class AddOrder extends Component {
             value={this.state.street}
           ></input>
           <br />
-          <label htmlFor='PostCod'>Post Cod</label>
+          <label htmlFor='PostCod'>P. Cod</label>
           <input
             type='text'
             name='post_cod'
@@ -107,6 +112,7 @@ export class AddOrder extends Component {
             onChange={this.handleChange}
             value={this.state.post_cod}
           ></input>
+          <br />
           <label htmlFor='Date'>Date</label>
           <input
             type='date'
@@ -116,11 +122,11 @@ export class AddOrder extends Component {
             value={this.state.date_deliver}
           ></input>
           <br />
-          <label htmlFor='bottle'>bottle type</label>
+          <label htmlFor='bottle'>Type</label>
           <input
             type='text'
             name='bottle_type'
-            id='Bottle'
+            id='bottle'
             placeholder='Nº and Bottle type'
             onChange={this.handleChange}
             value={this.state.bottle_type}
@@ -131,6 +137,7 @@ export class AddOrder extends Component {
           <textarea
             name='observations'
             form='Obs'
+            id='Obs'
             onChange={this.handleChange}
             value={this.state.observations}
           ></textarea>

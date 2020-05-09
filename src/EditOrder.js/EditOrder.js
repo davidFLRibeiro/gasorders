@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import orderContext from '../context/orderContext';
 import config from '../config';
-import { withRouter } from 'react-router-dom';
+import './EditOrder.css';
 
 export class EditOrder extends Component {
   constructor(props) {
@@ -87,9 +87,9 @@ export class EditOrder extends Component {
 
   render() {
     return (
-      <div className='addOrder'>
+      <div className='editOrder'>
         <h1>Edit Order</h1>
-        <form className='order'>
+        <form className='orderEdit'>
           <label htmlFor='phone'>Phone</label>
           <input
             type='text'
@@ -109,6 +109,7 @@ export class EditOrder extends Component {
             onChange={this.handleEditChange}
             value={this.state.client_name}
           ></input>
+          <br />
           <label htmlFor='Street'>Street</label>
           <input
             type='text'
@@ -119,7 +120,7 @@ export class EditOrder extends Component {
             value={this.state.street}
           ></input>
           <br />
-          <label htmlFor='PostCod'>Post Cod</label>
+          <label htmlFor='PostCod'>P. Cod</label>
           <input
             type='text'
             name='post_cod'
@@ -128,6 +129,7 @@ export class EditOrder extends Component {
             onChange={this.handleEditChange}
             value={this.state.post_cod}
           ></input>
+          <br />
           <label htmlFor='Date'>Date</label>
           <input
             type='date'
@@ -137,7 +139,7 @@ export class EditOrder extends Component {
             value={this.state.date_deliver}
           ></input>
           <br />
-          <label htmlFor='bottle'>bottle type</label>
+          <label htmlFor='bottle'>Type</label>
           <input
             type='text'
             name='bottle_type'
@@ -159,11 +161,13 @@ export class EditOrder extends Component {
           <label htmlFor='delivered'>Delivered</label>
           <input
             type='checkbox'
+            id='check'
             name='delivered'
             onChange={this.handleEditChange}
             value={this.state.delivered}
             checked={this.state.delivered ? 'checked' : ''}
           ></input>
+          <br />
           <button type='button' onClick={this.handleEditOrder}>
             Submit
           </button>

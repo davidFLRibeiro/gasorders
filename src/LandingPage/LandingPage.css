@@ -4,15 +4,132 @@
 
 body,
 html {
-  display: block;
   padding: 0;
-  margin-top: 0;
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  font-family: 'Courier New';
+  margin: 0;
 }
 
 .landingPage {
   text-align: center;
+}
+
+.landingPage h1 {
+  margin: auto;
+}
+
+.btnRequests {
+  height: 40px;
+  width: 90px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.btnDelivers {
+  height: 40px;
+  width: 90px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.truck {
+  margin-top: 30px;
+  max-width: 50%;
+  height: auto;
+}
+
+@media screen and (min-width: 480px) {
+  .landingPage {
+    text-align: center;
+  }
+
+  .landingPage h1 {
+    margin: auto;
+  }
+
+  .btnRequests {
+    height: 45px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .btnDelivers {
+    height: 45px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .truck {
+    margin-top: 30px;
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .landingPage {
+    text-align: center;
+  }
+
+  .landingPage h1 {
+    margin: auto;
+  }
+
+  .btnRequests {
+    height: 60px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .btnDelivers {
+    height: 60px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .truck {
+    margin-top: 30px;
+    max-width: 60%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .landingPage {
+    text-align: center;
+  }
+
+  .landingPage h1 {
+    margin: auto;
+  }
+
+  .btnRequests {
+    height: 70px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .btnDelivers {
+    height: 70px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .truck {
+    margin-top: 30px;
+    max-width: 50%;
+    height: auto;
+  }
 }

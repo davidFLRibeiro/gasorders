@@ -24,7 +24,7 @@ export class Historic extends Component {
     }
     return (
       <section className='order_list'>
-        <h1>HISTORIC</h1>
+        <h1>Historic</h1>
         <ul>
           {orders.map((order) => (
             <li
@@ -33,7 +33,7 @@ export class Historic extends Component {
               onClick={this.handleEditOrder.bind(this)}
             >
               {' '}
-              {order.client_name} {'  '} {order.date_deliver}
+              {order.client_name} &nbsp; &nbsp; {order.date_deliver}
             </li>
           ))}
         </ul>
