@@ -17,6 +17,7 @@ export class AddOrder extends Component {
       delivered: '',
       orders: [],
       errorMsg: '',
+      isValid: false,
     };
     this.handleAddOrder = this.handleAddOrder.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -31,6 +32,17 @@ export class AddOrder extends Component {
 
   handleAddOrder = (e) => {
     e.preventDefault();
+
+    if (
+      this.state.phone_number.length === 0 ||
+      this.state.street.length === 0 ||
+      this.state.client_name.length === 0 ||
+      this.state.bottle_type.length === 0 ||
+      this.state.date_deliver.length === 0 ||
+      this.state.observations.length === 0
+    ) {
+      return this.setState({ isValid: true });
+    }
 
     const order = {
       phone_number: this.state.phone_number,
@@ -58,6 +70,7 @@ export class AddOrder extends Component {
       .then((data) => {
         this.context.ordersUpdate(data);
         this.props.history.push('/Historic');
+        this.setState({ isValid: false });
       })
       .catch((error) => {
         console.log(error);
@@ -66,11 +79,12 @@ export class AddOrder extends Component {
   };
 
   render() {
-    console.log(this.context);
-
     return (
       <div className='addOrder'>
         <h1>Add Order </h1>
+        {this.state.isValid && (
+          <p>The only not required field is Observations</p>
+        )}
         {this.state.errorMsg && <p>phone number to long</p>}
         <form className='orderAdd'>
           <label htmlFor='phone'>Phone</label>

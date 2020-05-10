@@ -9,6 +9,11 @@ html {
   font-family: 'Courier New';
 }
 
+p {
+  text-align: center;
+  color: red;
+}
+
 h1 {
   margin-left: 25px;
 }

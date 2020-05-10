@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import orderContext from '../context/orderContext';
 import { Redirect } from 'react-router-dom';
+import './delivers.css';
 
 export class delivers extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export class delivers extends Component {
       return <Redirect to={`/EditOrder/${this.state.orderEdit}`} />;
     }
     return (
-      <section className='order_list'>
+      <section className='delivers_list'>
         <h1>Delivers</h1>
         <ul>
           {orders
@@ -36,7 +37,7 @@ export class delivers extends Component {
                 onClick={this.handleEditOrder.bind(this)}
               >
                 {' '}
-                {order.client_name} {'  '} {order.date_deliver}
+                {order.client_name} &nbsp; &nbsp; {order.date_deliver}
               </li>
             ))}
         </ul>

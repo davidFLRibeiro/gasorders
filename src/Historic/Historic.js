@@ -23,7 +23,7 @@ export class Historic extends Component {
       return <Redirect to={`/EditOrder/${this.state.orderEdit}`} />;
     }
     return (
-      <section className='order_list'>
+      <section className='historic_list'>
         <h1>Historic</h1>
         <ul>
           {orders.map((order) => (

@@ -10,6 +10,7 @@ export class ClientList extends Component {
 
     return (
       <div className='Clients'>
+        <h1>Client List</h1>
         <ul>
           {clients.map((phoneN, index) => {
             let orderList = orders.filter((order) => {

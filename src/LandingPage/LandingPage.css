@@ -4,8 +4,6 @@
 
 body,
 html {
-  padding: 0;
-  margin: 0;
 }
 
 .landingPage {
@@ -17,11 +15,15 @@ html {
 }
 
 .btnRequests {
-  height: 40px;
-  width: 90px;
+  margin: auto !important;
+  height: 30px;
+  font-size: 12px;
+  border: 2px solid white;
+  width: 80px;
   background-color: black;
   color: white;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .btnDelivers {
@@ -48,8 +50,11 @@ html {
   }
 
   .btnRequests {
+    margin: auto !important;
     height: 45px;
+    border: 2px solid white;
     width: 100px;
+    font-size: 14px;
     background-color: black;
     color: white;
     font-weight: bold;
@@ -80,8 +85,10 @@ html {
   }
 
   .btnRequests {
-    height: 60px;
-    width: 110px;
+    margin: auto !important;
+    height: 45px;
+    border: 2px solid white;
+    width: 100px;
     background-color: black;
     color: white;
     font-weight: bold;
@@ -112,8 +119,10 @@ html {
   }
 
   .btnRequests {
-    height: 70px;
-    width: 120px;
+    margin: auto !important;
+    height: 45px;
+    border: 2px solid white;
+    width: 100px;
     background-color: black;
     color: white;
     font-weight: bold;

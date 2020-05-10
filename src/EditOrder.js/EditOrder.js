@@ -24,7 +24,7 @@ export class EditOrder extends Component {
 
   handleEditChange(e) {
     const value = e.target.value;
-    console.log(e.target.name, value, e.target.checked);
+    // console.log(e.target.name, value, e.target.checked);
     if (e.target.name === 'delivered')
       this.setState({ delivered: e.target.checked });
     else this.setState({ [e.target.name]: value });
@@ -32,7 +32,7 @@ export class EditOrder extends Component {
 
   handleEditOrder = (e) => {
     e.preventDefault();
-    console.log(this.state.delivered);
+    // console.log(this.state.delivered);
     const order = {
       id: this.state.id,
       phone_number: this.state.phone_number,
@@ -71,7 +71,7 @@ export class EditOrder extends Component {
     const orderdatarray = this.context.orders.filter(
       (order) => order.id === parseInt(orderId)
     );
-    console.log(orderdatarray[0].delivered);
+    // console.log(orderdatarray[0].delivered);
     this.setState({
       id: orderdatarray[0].id,
       phone_number: orderdatarray[0].phone_number,
