@@ -9,7 +9,7 @@ import orderContext from './context/orderContext';
 import config from './config';
 import './App.css';
 import EditOrder from './EditOrder.js/EditOrder';
-import { delivers } from './delivers/delivers';
+import delivers from './delivers/delivers';
 
 export class App extends Component {
   constructor(props) {

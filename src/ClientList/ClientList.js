@@ -7,7 +7,7 @@ export class ClientList extends Component {
 
   render() {
     const { clients = [], orders = [] } = this.context;
-
+    //mapping clients too get client list
     return (
       <div className='Clients'>
         <h1>Client List</h1>

@@ -1,4 +1,4 @@
- {
+* {
   box-sizing: border-box;
 }
 
@@ -9,6 +9,7 @@ a {
 }
 
 ul {
+  font-family: 'Courier New';
   list-style-type: none;
 }
 
@@ -20,6 +21,7 @@ ul {
 }
 
 .menu label[for='menu-toggle'] {
+  font-family: 'Courier New';
   cursor: pointer;
   color: #f5f5f5;
   font-weight: bold;
@@ -36,6 +38,7 @@ ul {
 }
 
 .menu li {
+  font-family: 'Courier New';
   font-size: 12px;
   margin-left: 20px;
   margin-top: 7px;
@@ -85,9 +88,11 @@ label,
     font-family: 'Courier New';
     color: white;
     font-weight: bold;
+    font-family: 'Courier New';
   }
 
   ul {
+    font-family: 'Courier New';
     list-style-type: none;
   }
 
@@ -120,6 +125,7 @@ label,
     margin-top: 7px;
     width: 96%;
     text-decoration: none !important;
+    font-family: 'Courier New';
   }
 
   label,
@@ -144,7 +150,6 @@ label,
     max-height: 0;
     padding: 0;
     margin: 0 auto;
-
     -webkit-transition: all 0.3s ease;
   }
 
@@ -169,6 +174,7 @@ label,
 
   ul {
     list-style-type: none;
+    font-family: 'Courier New';
   }
 
   .menu {
@@ -249,6 +255,7 @@ label,
 
   ul {
     list-style-type: none;
+    font-family: 'Courier New';
   }
 
   .menu {

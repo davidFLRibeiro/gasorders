@@ -17,7 +17,13 @@ export class AddOrder extends Component {
       delivered: '',
       orders: [],
       errorMsg: '',
-      isValid: false,
+      showError: false,
+      showErrorStreet: false,
+      showErrorName: false,
+      showErrorPCod: false,
+      showErrorType: false,
+      showErrorDate: false,
+      phoneError: '',
     };
     this.handleAddOrder = this.handleAddOrder.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -30,18 +36,63 @@ export class AddOrder extends Component {
     this.setState({ [e.target.name]: value });
   }
 
+  //Handle add Order with conditions
+
   handleAddOrder = (e) => {
     e.preventDefault();
-
+    let showError = false;
+    let showErrorDate = false;
+    let showErrorName = false;
+    let showErrorPCod = false;
+    let showErrorStreet = false;
+    let showErrorType = false;
     if (
       this.state.phone_number.length === 0 ||
-      this.state.street.length === 0 ||
-      this.state.client_name.length === 0 ||
-      this.state.bottle_type.length === 0 ||
-      this.state.date_deliver.length === 0 ||
-      this.state.observations.length === 0
+      this.state.phone_number.length > 9
     ) {
-      return this.setState({ isValid: true });
+      showError = true;
+    }
+    if (this.state.client_name.length === 0) {
+      showErrorName = true;
+    }
+    if (this.state.street.length === 0) {
+      showErrorStreet = true;
+    }
+
+    if (this.state.post_cod.length === 0) {
+      showErrorPCod = true;
+    }
+    if (this.state.date_deliver.length === 0) {
+      showErrorDate = true;
+    }
+    if (this.state.bottle_type.length === 0) {
+      showErrorType = true;
+    }
+    if (!/^[0-9\b]+$/.test(this.state.post_cod)) {
+      showErrorPCod = true;
+    }
+
+    if (!/^[0-9\b]+$/.test(this.state.phone_number)) {
+      showError = true;
+    }
+
+    if (
+      showError ||
+      showErrorName ||
+      showErrorStreet ||
+      showErrorPCod ||
+      showErrorDate ||
+      showErrorType
+    ) {
+      this.setState({
+        showError,
+        showErrorName,
+        showErrorStreet,
+        showErrorPCod,
+        showErrorDate,
+        showErrorType,
+      });
+      return;
     }
 
     const order = {
@@ -69,8 +120,7 @@ export class AddOrder extends Component {
       })
       .then((data) => {
         this.context.ordersUpdate(data);
-        this.props.history.push('/Historic');
-        this.setState({ isValid: false });
+        this.props.history.push('/OrderHistoric');
       })
       .catch((error) => {
         console.log(error);
@@ -82,11 +132,10 @@ export class AddOrder extends Component {
     return (
       <div className='addOrder'>
         <h1>Add Order </h1>
-        {this.state.isValid && (
-          <p>The only not required field is Observations</p>
-        )}
-        {this.state.errorMsg && <p>phone number to long</p>}
+
         <form className='orderAdd'>
+          <p>only accepts 9 numbers</p>
+          {this.state.showError && <p>required and only numbers </p>}
           <label htmlFor='phone'>Phone</label>
           <input
             type='text'
@@ -97,6 +146,7 @@ export class AddOrder extends Component {
             value={this.state.phone_number}
           ></input>
           <br />
+          {this.state.showErrorName && <p>Name is required</p>}
           <label htmlFor='Name'>Name</label>
           <input
             type='text'
@@ -107,6 +157,8 @@ export class AddOrder extends Component {
             value={this.state.client_name}
           ></input>
           <br />
+
+          {this.state.showErrorStreet && <p>Street is required</p>}
           <label htmlFor='Street'>Street</label>
           <input
             type='text'
@@ -117,6 +169,9 @@ export class AddOrder extends Component {
             value={this.state.street}
           ></input>
           <br />
+          {this.state.showErrorPCod && <p> 5 Numbers only Numbers</p>}
+          <p>only accepts 5 numbers</p>
+
           <label htmlFor='PostCod'>P. Cod</label>
           <input
             type='text'
@@ -127,6 +182,7 @@ export class AddOrder extends Component {
             value={this.state.post_cod}
           ></input>
           <br />
+          {this.state.showErrorDate && <p>Date is required</p>}
           <label htmlFor='Date'>Date</label>
           <input
             type='date'
@@ -136,6 +192,7 @@ export class AddOrder extends Component {
             value={this.state.date_deliver}
           ></input>
           <br />
+          {this.state.showErrorType && <p>Type is required</p>}
           <label htmlFor='bottle'>Type</label>
           <input
             type='text'

@@ -16,6 +16,14 @@ export class EditOrder extends Component {
       observations: '',
       delivered: '',
       orders: [],
+      errorMsg: '',
+      showError: false,
+      showErrorStreet: false,
+      showErrorName: false,
+      showErrorPCod: false,
+      showErrorType: false,
+      showErrorDate: false,
+      phoneError: '',
     };
     this.handleEditChange = this.handleEditChange.bind(this);
   }
@@ -24,7 +32,6 @@ export class EditOrder extends Component {
 
   handleEditChange(e) {
     const value = e.target.value;
-    // console.log(e.target.name, value, e.target.checked);
     if (e.target.name === 'delivered')
       this.setState({ delivered: e.target.checked });
     else this.setState({ [e.target.name]: value });
@@ -32,7 +39,62 @@ export class EditOrder extends Component {
 
   handleEditOrder = (e) => {
     e.preventDefault();
-    // console.log(this.state.delivered);
+
+    let showError = false;
+    let showErrorDate = false;
+    let showErrorName = false;
+    let showErrorPCod = false;
+    let showErrorStreet = false;
+    let showErrorType = false;
+    if (
+      this.state.phone_number.length === 0 ||
+      this.state.phone_number.length > 9
+    ) {
+      showError = true;
+    }
+    if (this.state.client_name.length === 0) {
+      showErrorName = true;
+    }
+    if (this.state.street.length === 0) {
+      showErrorStreet = true;
+    }
+
+    if (this.state.post_cod.length === 0) {
+      showErrorPCod = true;
+    }
+    if (this.state.date_deliver.length === 0) {
+      showErrorDate = true;
+    }
+    if (this.state.bottle_type.length === 0) {
+      showErrorType = true;
+    }
+    if (!/^[0-9\b]+$/.test(this.state.post_cod)) {
+      showErrorPCod = true;
+    }
+
+    if (!/^[0-9\b]+$/.test(this.state.phone_number)) {
+      showError = true;
+    }
+
+    if (
+      showError ||
+      showErrorName ||
+      showErrorStreet ||
+      showErrorPCod ||
+      showErrorDate ||
+      showErrorType
+    ) {
+      this.setState({
+        showError,
+        showErrorName,
+        showErrorStreet,
+        showErrorPCod,
+        showErrorDate,
+        showErrorType,
+      });
+      return;
+    }
+
     const order = {
       id: this.state.id,
       phone_number: this.state.phone_number,
@@ -71,7 +133,7 @@ export class EditOrder extends Component {
     const orderdatarray = this.context.orders.filter(
       (order) => order.id === parseInt(orderId)
     );
-    // console.log(orderdatarray[0].delivered);
+
     this.setState({
       id: orderdatarray[0].id,
       phone_number: orderdatarray[0].phone_number,
@@ -90,6 +152,10 @@ export class EditOrder extends Component {
       <div className='editOrder'>
         <h1>Edit Order</h1>
         <form className='orderEdit'>
+          <p>only accepts 9 numbers</p>
+          {this.state.showError && (
+            <p>required and can not have more then 9 digits</p>
+          )}
           <label htmlFor='phone'>Phone</label>
           <input
             type='text'
@@ -99,7 +165,9 @@ export class EditOrder extends Component {
             onChange={this.handleEditChange}
             value={this.state.phone_number}
           ></input>
+          {this.state.showErrorName && <p>Name is required</p>}
           <br />
+
           <label htmlFor='Name'>Name</label>
           <input
             type='text'
@@ -110,6 +178,7 @@ export class EditOrder extends Component {
             value={this.state.client_name}
           ></input>
           <br />
+          {this.state.showErrorStreet && <p>Street is required</p>}
           <label htmlFor='Street'>Street</label>
           <input
             type='text'
@@ -120,6 +189,11 @@ export class EditOrder extends Component {
             value={this.state.street}
           ></input>
           <br />
+
+          {this.state.showErrorPCod && (
+            <p>P Cod required and can have only 9 numbers</p>
+          )}
+          <p>only accepts 5 numbers</p>
           <label htmlFor='PostCod'>P. Cod</label>
           <input
             type='text'
@@ -130,6 +204,7 @@ export class EditOrder extends Component {
             value={this.state.post_cod}
           ></input>
           <br />
+          {this.state.showErrorDate && <p>Date is required</p>}
           <label htmlFor='Date'>Date</label>
           <input
             type='date'
@@ -139,6 +214,7 @@ export class EditOrder extends Component {
             value={this.state.date_deliver}
           ></input>
           <br />
+          {this.state.showErrorType && <p>Type is required</p>}
           <label htmlFor='bottle'>Type</label>
           <input
             type='text'

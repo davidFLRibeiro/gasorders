@@ -22,6 +22,7 @@ export class Historic extends Component {
     if (this.state.redirect) {
       return <Redirect to={`/EditOrder/${this.state.orderEdit}`} />;
     }
+    //return the list of orders
     return (
       <section className='historic_list'>
         <h1>Historic</h1>

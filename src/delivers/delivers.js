@@ -3,7 +3,7 @@ import orderContext from '../context/orderContext';
 import { Redirect } from 'react-router-dom';
 import './delivers.css';
 
-export class delivers extends Component {
+export class Delivers extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +22,8 @@ export class delivers extends Component {
     if (this.state.redirect) {
       return <Redirect to={`/EditOrder/${this.state.orderEdit}`} />;
     }
+
+    //filter orders to get a specific order.
     return (
       <section className='delivers_list'>
         <h1>Delivers</h1>
@@ -46,4 +48,4 @@ export class delivers extends Component {
   }
 }
 
-export default delivers;
+export default Delivers;

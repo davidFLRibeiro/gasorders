@@ -6,6 +6,7 @@
   list-style-type: square;
   background-color: black;
   color: white;
+  font-family: 'Courier New';
 }
 
 .delivers_list li {
@@ -23,6 +24,7 @@
     list-style-type: square;
     background-color: black;
     color: white;
+    font-family: 'Courier New';
   }
 
   .delivers_list li {
@@ -41,6 +43,7 @@
     list-style-type: square;
     background-color: black;
     color: white;
+    font-family: 'Courier New';
   }
 
   .delivers_list li {
@@ -59,6 +62,7 @@
     list-style-type: square;
     background-color: black;
     color: white;
+    font-family: 'Courier New';
   }
 
   .delivers_list li {

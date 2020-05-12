@@ -2,19 +2,26 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-}
-
 .landingPage {
   text-align: center;
 }
 
 .landingPage h1 {
   margin: auto;
+  margin-top: 25px !important;
+  font-size: 22px;
+  font-family: 'Courier New';
+}
+
+.landingPage h2 {
+  font-size: 14px;
+  margin: auto;
+  font-family: 'Courier New';
+  width: 80%;
 }
 
 .btnRequests {
+  font-family: 'Courier New';
   margin: auto !important;
   height: 30px;
   font-size: 12px;
@@ -27,6 +34,7 @@ html {
 }
 
 .btnDelivers {
+  font-family: 'Courier New';
   height: 40px;
   width: 90px;
   background-color: black;
@@ -47,6 +55,15 @@ html {
 
   .landingPage h1 {
     margin: auto;
+    font-size: 30px;
+    font-family: 'Courier New';
+  }
+
+  .landingPage h2 {
+    font-size: 20px;
+    margin: auto;
+    font-family: 'Courier New';
+    width: 80%;
   }
 
   .btnRequests {
@@ -82,6 +99,15 @@ html {
 
   .landingPage h1 {
     margin: auto;
+    font-size: 40px;
+    font-family: 'Courier New';
+  }
+
+  .landingPage h2 {
+    font-size: 25px;
+    margin: auto;
+    font-family: 'Courier New';
+    width: 80%;
   }
 
   .btnRequests {
@@ -115,7 +141,16 @@ html {
   }
 
   .landingPage h1 {
+    font-size: 50px;
     margin: auto;
+    font-family: 'Courier New';
+  }
+
+  .landingPage h2 {
+    font-size: 30px;
+    margin: auto;
+    width: 80%;
+    font-family: 'Courier New';
   }
 
   .btnRequests {
