@@ -169,7 +169,7 @@ export class AddOrder extends Component {
             value={this.state.street}
           ></input>
           <br />
-          {this.state.showErrorPCod && <p> 5 Numbers only Numbers</p>}
+          {this.state.showErrorPCod && <p> Required and only Numbers</p>}
           <p>only accepts 5 numbers</p>
 
           <label htmlFor='PostCod'>P. Cod</label>

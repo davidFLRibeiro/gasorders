@@ -190,9 +190,7 @@ export class EditOrder extends Component {
           ></input>
           <br />
 
-          {this.state.showErrorPCod && (
-            <p>P Cod required and can have only 9 numbers</p>
-          )}
+          {this.state.showErrorPCod && <p>P Cod required and only numbers</p>}
           <p>only accepts 5 numbers</p>
           <label htmlFor='PostCod'>P. Cod</label>
           <input
