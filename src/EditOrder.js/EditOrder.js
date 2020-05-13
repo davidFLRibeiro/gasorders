@@ -130,20 +130,20 @@ export class EditOrder extends Component {
 
   componentDidMount() {
     const { orderId } = this.props.match.params;
-    const orderdatarray = this.context.orders.filter(
+    const order = this.context.orders.find(
       (order) => order.id === parseInt(orderId)
     );
 
     this.setState({
-      id: orderdatarray[0].id,
-      phone_number: orderdatarray[0].phone_number,
-      street: orderdatarray[0].street,
-      client_name: orderdatarray[0].client_name,
-      post_cod: orderdatarray[0].post_cod,
-      bottle_type: orderdatarray[0].bottle_type,
-      date_deliver: orderdatarray[0].date_deliver,
-      observations: orderdatarray[0].observations,
-      delivered: orderdatarray[0].delivered,
+      id: order.id,
+      phone_number: order.phone_number,
+      street: order.street,
+      client_name: order.client_name,
+      post_cod: order.post_cod,
+      bottle_type: order.bottle_type,
+      date_deliver: order.date_deliver,
+      observations: order.observations,
+      delivered: order.delivered,
     });
   }
 

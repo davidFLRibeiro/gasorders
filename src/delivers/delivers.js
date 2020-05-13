@@ -26,7 +26,7 @@ export class Delivers extends Component {
     //filter orders to get a specific order.
     return (
       <section className='delivers_list'>
-        <h1>Delivers</h1>
+        <h1>Deliveries</h1>
         <ul>
           {orders
             .filter((order) => {

@@ -203,7 +203,7 @@ export class AddOrder extends Component {
             value={this.state.bottle_type}
           ></input>
           <br />
-          <label htmlFor='Obs'>Obervations:</label>
+          <label htmlFor='Obs'>Observations:</label>
           <br />
           <textarea
             name='observations'

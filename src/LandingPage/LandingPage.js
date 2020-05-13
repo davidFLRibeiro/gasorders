@@ -12,8 +12,8 @@ export class LandingPage extends Component {
         <h2>
           This app "gas orders", the user can add orders. When adding the
           distributor user can change the order info or change to the order too
-          delivered. Creates a history of delivers and customer records. To add
-          an order press "Add Order", to see orders in distribution press
+          delivered. Creates a history of gas deliveries and customer orders. To
+          add an order press "Add Order", to see orders in distribution press
           "deliveries" In the Menu the user can see add orders and see
           deliveries, there is also a list of customers and history
         </h2>
@@ -21,7 +21,7 @@ export class LandingPage extends Component {
           <Link to='/AddOrder'>Add Order</Link>
         </div>
         <div className='btnRequests'>
-          <Link to='/Delivers'>Delivers</Link>
+          <Link to='/Delivers'>Deliveries</Link>
         </div>
 
         <br />

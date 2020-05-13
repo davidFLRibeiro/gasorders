@@ -36,19 +36,6 @@ export class App extends Component {
       console.warn(err);
     }
   }
-  /* fetch(`${config.API_ENDPOINT}clients`)
-      .then((ordersRes) => {
-        if (!ordersRes.ok)
-          return ordersRes.json().then((e) => Promise.reject(e));
-        return ordersRes.json();
-      })
-      .then((orders) => {
-        this.setState({ orders });
-      })
-      .catch((error) => {
-        console.error({ error });
-      });
-  }*/
 
   ordersUpdate = (data) => {
     this.setState((orders) => {
